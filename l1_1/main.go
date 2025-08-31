@@ -8,11 +8,11 @@ type Human struct {
 	Gender string
 }
 
-func (h Human) ShowName() {
+func (h Human) showName() {
 	fmt.Printf("Hello, my name is %s\n", h.Name)
 }
 
-func (h Human) ShowStats() {
+func (h Human) showStats() {
 	fmt.Printf("Hello, i am %s %s %d years old\n", h.Gender, h.Name, h.Age)
 }
 
@@ -21,11 +21,11 @@ type Action struct {
 	Action string
 }
 
-func (a Action) ShowStats() {
+func (a Action) showStats() {
 	fmt.Printf("Hello, i am %s %s %d years old with action '%s'\n", a.Gender, a.Name, a.Age, a.Action)
 }
 
-func (a Action) ShowAction() {
+func (a Action) showAction() {
 	fmt.Printf("Hello, i am %s and i can %s\n", a.Name, a.Action)
 }
 
@@ -36,15 +36,15 @@ func main() {
 		Gender: "Female",
 	}
 
-	Alice.ShowName()
-	Alice.ShowStats()
+	Alice.showName()
+	Alice.showStats()
 
 	MoveForward := Action{
 		Human:  Alice,
 		Action: "Move Forward",
 	}
 
-	MoveForward.ShowName()
-	MoveForward.ShowStats()
-	MoveForward.ShowAction()
+	MoveForward.showName()
+	MoveForward.showStats()
+	MoveForward.showAction()
 }
