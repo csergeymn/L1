@@ -10,7 +10,6 @@ import (
 
 // worker получает данные из канала и обрабатывает
 func worker(id int, jobs <-chan int) {
-	fmt.Println("worker started", id)
 	for job := range jobs {
 		fmt.Printf("Worker %d processed job %d\n", id, job)
 	}
@@ -36,7 +35,7 @@ func main() {
 		go worker(i, jobs)
 	}
 
-	jobID := 1
+	jobID := 100
 	for {
 		jobs <- jobID
 		fmt.Printf("Main: sent job %d\n", jobID)
