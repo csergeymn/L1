@@ -8,7 +8,6 @@ import (
 	"time"
 )
 
-// worker получает данные из канала и обрабатывает
 func worker(id int, jobs <-chan int) {
 	for job := range jobs {
 		fmt.Printf("Worker %d processed job %d\n", id, job)
