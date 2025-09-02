@@ -13,7 +13,6 @@ var (
 func main() {
 	var wg sync.WaitGroup
 
-	// Запускаем 10 горутин, каждая пишет в карту
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
 		go func(i int) {
@@ -28,7 +27,6 @@ func main() {
 
 	wg.Wait()
 
-	// Читаем результат
 	fmt.Println("Result:", concurrentMap)
 	for i := 0; i < 10; i++ {
 		key := fmt.Sprintf("key%d", i)
