@@ -8,15 +8,14 @@ import (
 	"strings"
 )
 
-const bitSize = 64 // int64 has 64 bits
+const bitSize = 64 // max bits in variable
 
-// setBit sets the i-th bit (1-based index) of n to bitValue (0 or 1).
 func setBit(n int64, i uint, bitValue int) int64 {
-	i-- // convert to 0-based index
+	i--
 	if bitValue == 1 {
-		n = n | (1 << i) // set bit
+		n = n | (1 << i)
 	} else {
-		n = n &^ (1 << i) // clear bit
+		n = n &^ (1 << i)
 	}
 	return n
 }
