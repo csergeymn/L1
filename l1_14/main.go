@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-// универсальная функция определения типа
 func detectType(v interface{}) {
 	switch v.(type) {
 	case int:
